@@ -1,0 +1,27 @@
+{
+  "name": "testing-practice-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch --verbose *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heroes75/testing-practice-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heroes75/testing-practice-project/issues"
+  },
+  "homepage": "https://github.com/heroes75/testing-practice-project#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^30.0.2",
+    "jest": "^30.0.3"
+  }
+}
