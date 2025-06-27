@@ -1,89 +1,39 @@
 import calculator from "./calculator";
 
 describe("calculator addition", () => {
-    test("addition test1", () => {
-        let a = 1;
-        let b = 3;
-        let res = calculator.add(a, b)
-        expect(res).toBe(4)
-    });
-    test("addition test2", () => {
-        let a = 0;
-        let b = -6;
-        let res = calculator.add(a, b)
-        expect(res).toBe(-6)
-    })
-    test("addition test3", () => {
-        let a = 0;
-        let b = 0;
-        let res = calculator.add(a, b)
-        expect(res).toBe(0)
+    let nubrs = [[1, 3], [0, -6], [0, 0]];
+    let res = [4, -6, 0];
+    nubrs.forEach((el, i) => {
+        test("addition test" + (i + 1), () => 
+            expect(calculator.add(el[0], el[1])).toBe(res[i])
+        )
     })
 })
 
 describe("calculator subtraction", () => {
-    test("subtraction test1", () => {
-        let a = 1;
-        let b = 3;
-        let res = calculator.sub(a, b)
-        expect(res).toBe(-2)
-    });
-    test("subtraction test2", () => {
-        let a = 0;
-        let b = -6;
-        let res = calculator.sub(a, b)
-        expect(res).toBe(6)
+    let nubrs = [[1, 3], [0, -6], [0, 0]];
+    let res = [-2, 6, 0];
+    nubrs.forEach((el, i) => {
+        test("subtraction test" + (i + 1), () => 
+            expect(calculator.sub(el[0], el[1])).toBe(res[i])
+        )
     })
-    test("subtraction test3", () => {
-        let a = 0;
-        let b = 0;
-        let res = calculator.sub(a, b)
-        expect(res).toBe(0)
-    });
 });
 describe("calculator multiplication", () => {
-    test("multiplication test1", () => {
-        let a = 5;
-        let b = 3;
-        let res = calculator.mult(a, b)
-        expect(res).toEqual(15)
-    });
-    test("multiplication test2", () => {
-        let a = 0;
-        let b = -6;
-        let res = calculator.mult(a, b)
-        expect(res).toEqual(0)
+    let nubrs = [[5, 3], [0, -6], [-5, -5]];
+    let res = [15, 0, 25];
+    nubrs.forEach((el, i) => {
+        test("multiplication test" + (i + 1), () => 
+            expect(calculator.mult(el[0], el[1])).toBe(res[i])
+        )
     })
-    test("multiplication test3", () => {
-        let a = -5;
-        let b = -5;
-        let res = calculator.mult(a, b)
-        expect(res).toEqual(25)
-    });
 })
 describe("calculator division", () => {
-    test("division test1", () => {
-        let a = 8;
-        let b = 2;
-        let res = calculator.div(a, b)
-        expect(res).toEqual(4)
-    });
-    test("division test2", () => {
-        let a = 0;
-        let b = -6;
-        let res = calculator.div(a, b)
-        expect(res).toEqual(0)
+    let nubrs = [[8, 2], [0, -6], [-5, 0], [0, 0]];
+    let res = [4, 0, -Infinity, NaN];
+    nubrs.forEach((el, i) => {
+        test("division test" + (i + 1), () => 
+            expect(calculator.div(el[0], el[1])).toBe(res[i])
+        )
     })
-    test("division test3", () => {
-        let a = -5;
-        let b = 0;
-        let res = calculator.div(a, b)
-        expect(res).toEqual(-Infinity)
-    });
-    test("division test3", () => {
-        let a = 0;
-        let b = 0;
-        let res = calculator.div(a, b)
-        expect(res).toEqual(NaN)
-    });
 })
